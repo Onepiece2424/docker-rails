@@ -1,0 +1,19 @@
+{
+  "name": "docker-rails",
+  "version": "1.0.0",
+  "description": "* 参考サイト <https://mseeeen.msen.jp/rails-docker/>",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "zenn-cli": "^0.1.144"
+  }
+}
