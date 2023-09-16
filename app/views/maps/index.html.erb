@@ -1,20 +1,31 @@
 
 <h2>Googleマップ</h2>
 
-<input id="address" type="textbox" value="GeekSalon">
-<input type="button" value="Encode" onclick="codeAddress()">
+<div className='search-form'>
+  <input id="address" type="textbox" value="GeekSalon">
+  <input type="button" value="検索" onclick="codeAddress()">
+</div>
+<div id="display">検索した場所の緯度・経度の表示</div>
 
 <div id='map'></div>
 
 <style>
+.search-form {
+  margin: 10px 0;
+}
 #map {
   height: 600px;
   width: 600px;
+}
+#display {
+  margin: 10px 0;
 }
 </style>
 
 <script>
 let map
+
+const display = document.getElementById('display')
 
 function initMap(){
   geocoder = new google.maps.Geocoder()
@@ -42,6 +53,7 @@ function codeAddress(){
           map: map,
           position: results[0].geometry.location
       });
+      display.textContent = "検索結果：" + results[ 0 ].geometry.location
     } else {
       alert('該当する結果がありませんでした：' + status);
     }
