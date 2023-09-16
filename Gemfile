@@ -72,3 +72,4 @@ group :test do
 end
 
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'pry-rails', :group => :development
