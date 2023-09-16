@@ -1,5 +1,9 @@
 
 <h2>Googleマップ</h2>
+
+<input id="address" type="textbox" value="GeekSalon">
+<input type="button" value="Encode" onclick="codeAddress()">
+
 <div id='map'></div>
 
 <style>
@@ -25,5 +29,24 @@ function initMap(){
     map: map
   });
 }
+
+let geocoder
+
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });
+}
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['YOUR_GOOGLE_API_KEY'] %>&callback=initMap" async defer></script>
