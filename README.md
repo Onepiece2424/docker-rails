@@ -11,3 +11,6 @@ Dockerで作成したrailsアプリにgemを追加したとき発生したエラ
 
 SQLアンチパターン　ランダムセレクションについて
 <https://zenn.dev/kingdom0927/articles/acb20191a949d5>
+
+git merge と 4種類の結果について
+<https://zenn.dev/kingdom0927/articles/3900e907106f08>
